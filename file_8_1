@@ -1,0 +1,332 @@
+//
+//  main.m
+//  zy_7_31
+//
+//  Created by lanou3g on 15/7/31.
+//  Copyright (c) 2015年 lanou3g. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+int main(int argc, const char * argv[]) {
+    //    相同的数据类型的成员组成的 一组数据,叫做数组
+    //    数组是一种构造类型,相同的数据类型 组成的新的数据类型
+    //    一位数组的定义
+    //    类型说明符 数组名[常量表达式] = {值1,值2...};
+    //    int array[50] = {10,20,30}
+    //    float oc_score[40]= {30};
+    //    1.达到数组规定的长度
+    //    int a[3] ={0,1,2};
+    //    2.数组中没有设置初始值的元素,自动设置为0
+    //    int b [5] ={1,2,3};
+    //    3.不初始化,默认全是 0
+    //    int c[5];
+    //    4.根据初始化的设置,推断出数组元素的个数
+    //    int d[] = {1,2,3,4,5};
+    //    int e[2] = {1,2,3,4};  错的 数组越界
+    //    int f[] ={0};
+    //    数组的地址空间的开辟
+    //    空间大小 = 元素的个数 * 类型的字节数
+    //    开辟的地址空间是连续的
+    //    数组元素的访问
+    //    2.不能一次调用所有 元素的值
+    //    2.基本数据类型存储一个值,数组中存储多个数据
+    //    3.使用小标实现数组元素的访问, 数组名[下标]
+    //    4.下标:是数组元素在数组中的序号,数组是有序的,每个元素都有自己唯一的序号,序号是从.开始的,最后一个元素的下标是n - 1
+    //
+    //  int a[4]  ={1,2,3,4};
+    //    for (int i = 0; i < 4; i ++) {
+    //        printf("%d",a[i ]);
+    //    }
+    //    for (int i = 4; i  >= 0 ; i --) {
+    //        [[[printf("%d\t",a[i]);
+    //    }
+    //      //修改数组元素
+    //          a[3] = 2;
+    //    for (int i = 0;i < 5; i ++) {
+    //        printf("%d",a[i]);
+    //    }
+    //    for (inr i = 0;  i < 5;   i++) {
+    //        a[i] = arc4random() % (20 - 10 + 1) + 10;
+    //    }
+    //    for (inr i = 0 ; i < 5; i ++) {
+    //        [printf("%d ",a[i]);
+    //    }
+    //    return 0;
+    //  int a[10],b[10],c ;
+    //    for (int i = 0 ; i < 10 ;i++) {
+    //        a[i] = arc4random() %( 13 -2 + 1) + 2;
+    //
+    //    }
+    //    for (int i = 0; i < 10;  i++) {
+    //        printf("%d", a[i]);
+    //    }
+    //    for (int i = 0; i < 10 ; i ++) {
+    //        b[i] = a[i];
+    //    }
+    //    for ( inr i = 0 ; i < 10 ; i ++) {
+    //        printf("%d",b[i]);
+    //
+    //    }
+    //    printf("\n");
+    //定义字符数组
+    //    char a[4] = {'a','r','r','a'};
+    //    char a1[4] = {'h','e','l','l'};
+    //
+    //    for (int i = 0; i  < 4; i++) {
+    //        printf("%c\t",a[i]);
+    //    }
+    //    a[3] = 'q';
+    //    a[2] = '\0' ;
+    //    for (int i = 0; i < 4; i ++) {
+    //        printf("%c ",a1[i]);
+    //    }
+    //    1.测量字符串函数 strlen(字符串);
+    //    char name[] = "wangdachui";
+    //    strlen(name); //返回值是无符号长整形 ,打印用%lu
+    //    测量的长度 不包括 '\0'
+    //    2.字符串拷贝
+    //    char ge[5] = {0};
+    //    char sex[] ="MAN";
+    //    strcpy(ge , sex); // 字符号i是把构面的字符串拷贝到前面的字符串里面,字符串1 的存储空间必须大于字符串2 的存储空间
+    //    printf("%s\n",ge);
+    //    strcpy(ge , "hahhah"); // 字符串拷贝 后面放 字符串 自己定义的可以,
+    //    字符串拼接函数
+    //    strcat(字符串 1, 字符串2);  把字符串2 放到字符串1 里
+    //    字符串1 的长度必须 足够大
+    //    字符串1 中的'\0' 取消,只在新船后面加 '\0'
+    //    char name[11] ="wang";
+    //    char name1[]= "dachui";
+    //    strcat(name, name1);
+    //     字符串比较
+    //    strcmp(字符串, 字符串);
+    //    字符串 1 - 字符串2 的字符
+    //    1. 字符串1  =字符串2, 函数结果为 0
+    //    2.字符串 1 > 字符串2 ,结果为负数,整的
+    //    3.字符串1 < 字符串2 ,结果为正整数
+    //      比较以第一个不同的字母为准,第一个不同的字母大得大,如果一个比较到头了,没到头的大
+    //    char a[] = "aaas";
+    //    char a1[] = "aaab";
+    //    strcmp(a, a1);
+    //    int  k = 0;
+    //    for (int i = 0; i < strlen(a); i --) {
+    //        if (a[i] ==' ') {
+    //            k ++;
+    //        }
+    //
+    //
+    //    }printf("%d\n");
+    //    for (int i = strlen(a); i >= 0; i --) {
+    //        printf("%c",a[i]);
+    //    }
+    //    printf("\n");
+    //    char str[] = "asdf";
+    //    int s = strlen(str) - i - 1;
+    //    for (inr i = 0; i < strlen(str) / 2;  i ++) {
+    //        int t = str[i];
+    //        str[i] = str[s];
+    //        str[s] = t;
+    //
+    //    }printf("%s\n",str);
+#pragma mark 冒泡
+    //    int a[4]= {1,3,2,0};
+    //    for (int j = 0; j < 3; j ++) {
+    //        for (int i = 0; i < 3 - j; i ++) {
+    //            if (a[i] > a[i + 1]) {
+    //                int t = a[i];
+    //                a[i] = a[i + 1];
+    //                a[i +1] = t;
+    //            }
+    //        }
+    //    }
+    //        for (int i = 0; i < 3; i ++) {
+    //            printf("%d\t",a[i]);
+    //
+    //    }
+    //
+    //    int a[4] = {1,2,3,0};
+    //    for (int i = 0; i < 3; i ++) {
+    //        for (int j = 0; j < 3- i; j ++) {
+    //            if (a[j] >a[j+1]) {
+    //                int t = a[j];
+    //                a[j] =a[j+1];
+    //                a[j+1]= t;
+    //            }
+    //        }
+    //                }
+    //    for (int i = 0; i  < 3; i ++) {
+    //        printf("%d\t",a[i]);
+    //
+    //    }
+    //
+    //
+    //    int a[4] ={1,2,5,3};
+    //    for (int i = 0; i < 3; i ++) {
+    //        for (int j = 0; j < 3  - i; j ++) {
+    //            if (a[j] > a[j +1]) {
+    //                int t= a[j];
+    //                a[j] =a[j +1];
+    //                a[j +1 ]= t;
+    //            }
+    //        }
+    //                }
+    //    for (int i = 0; i < 3; i ++) {
+    //        printf("%d",a[i]);
+    //
+    //    }
+    //    int a[]= {1,5,3,45};
+    //    for (int i = 0; i < 3; i ++) {
+    //        for (int j = 0; j < 3- i; j ++) {
+    //            if (a[j] > a[j +1]) {
+    //                int t =a[j];
+    //                a[j]= a[j +1];
+    //                a[j + 1]= t;
+    //            }
+    //        }
+    //    }
+    //    for (int i = 0 ; i < 3; i ++) {
+    //         printf("%d",a[i]);
+    //    }
+    //
+    //
+    //}
+    //    int a[] = {5,1,2,43};
+    //    for (int j = 0; j < 3;  j++ ) {
+    //        for (int i = 0; i < 3 - j; i ++) {
+    //            if (a[i] > a[ i +1]) {
+    //                int t= a[i];
+    //                a[i]= a[i+1];
+    //                a[i+1] = t;
+    //            }
+    //        }
+    //        }
+    //        for (int i = 0; i < 3; i ++) {
+    //            printf("%d",a[i]);
+    //        }
+    //    int a[]= {6,2,5,7};
+    //    for (int j = 0; j < 3;  j++) {
+    //        for (int i = 0;  i< 3 -i; i ++) {
+    //            if (a[i] > a[i +1]) {
+    //                int t= a[i];
+    //                a[i] = a[i +1];
+    //                a[i +1]= t;
+    //            }
+    //        }
+    //    }
+    //    for (int i = 0; i < 3; i++) {
+    //        printf("%d",a[i]);
+    //    }
+    //    int a[]= {3,5,6,6};
+    //    for (int i = 0;  i < 3; i ++) {
+    //        for (int j = 0; j < 3- i; j ++) {
+    //            if (a[j] > a[j +1]) {
+    //                int t= a[j];
+    //                a[j]= a[j +1];
+    //                a[j +1]= t;
+    //            }
+    //        }
+    //    }
+    //    for (int i = 0; i < 3; i ++) {
+    //        printf("%d\t",a[i]);
+    //    }
+    //    int a[] = {59,4,56,57};
+    //     BOOL flag = YES;
+    //    for (int i = 0; i < 3; i ++)
+    //    {
+    //        flag = NO;
+    //        for (int j =0; j< 3-i; j++)
+    //        {
+    //            if (a[j] >a[j+1])
+    //            {
+    //                int t=a[j];a[j] =a[j+1];a[j+1]= t;
+    //                flag= YES;
+    //            }
+    //
+    //        }
+    //
+    //        if (flag == NO)
+    //        {
+    //            break;
+    //        }
+    //
+    //    }
+    //    for (int i = 0; i < 3; i ++) {
+    //        printf("%d\t",a[i]);
+    //    }
+    //
+    //    int a[4]= {1,2,34,5};
+    //    for (int i = 0; i < 3 ; i ++) {
+    //        for (int j = 0; j < 3 - i ;  j ++) {
+    //            if ( a[j] > a[j +1]) {
+    //                int t= a[j];
+    //                a[j]= a[j +1];
+    //                a[j +1]= t;
+    //            }
+    //        }
+    //    }
+    //    for (int i = 0; i<= 3; i++) {
+    //        printf("%d\t",a[i]);
+    //    }
+    //
+    //
+    //
+    //    int a[]= {7,2,5,43};
+    //    for (int i = 0; i < 3; i ++) {
+    //        for (int j = 0; j < 3- i; j ++) {
+    //            if (a[j] > a[j + 1]) {
+    //                int t= a[j];
+    //                a[j]= a[j +1];
+    //                a[j +1]= t;
+    //            }
+    //        }
+    //
+    //    }for (int i = 0; i < 4; i++) {
+    //        printf("%d\t",a[i]);
+    //    }
+    //    
+    //    
+    //    int a[]= {1,2,43,0};
+    //        for (int i = 0; i < 3; i ++) {
+    //            for (int  j = 0; j < 3 - i; j ++) {
+    //                if (a[j] > a[j + 1]) {
+    //                    int t = a[j];
+    //                    a[j]= a[j + 1];
+    //                    a[j + 1]= t;
+    //                }
+    //            }
+    //        }
+    //    
+    //        for (int i = 0; i  < 4; i++) {
+    //            printf("%d  ",a[i]);
+    //        }
+    //    
+    //    
+    //    
+    //
+    //    BOOL flag = YES;
+    //    int a []={1,2,5,3};
+    //
+    //    for (int i = 0; i < 3; i ++) {
+    //        flag = NO;
+    //        for (int j = 0; j < 3 -i ; j++) {
+    //            if (a[j] > a[j +1]) {
+    //                int t= a[j];
+    //                a[j] =a[j + 1];
+    //                a[j + 1]= t;
+    //                flag= YES;
+    //            }
+    //        }
+    //            if (flag == NO) {
+    //                break;
+    //            }
+    //        
+    //    }
+    //    for (int i = 0; i < 4; i ++) {
+    //        printf("%d\t",a[i]);
+    //    }
+    
+    
+    
+    
+    
+}
